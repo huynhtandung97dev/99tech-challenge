@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+</head>
+<body>
+
+  <label for="numberInput">Enter number n: </label>
+  <input type="number" id="numberInput" min="1" value="5">
+  <button onclick="showResults()">Show Result</button>
+
+  <div class="result" id="output"></div>
+
+   <script>
+    function sum_to_n_a(n) {
+      let sum = 0;
+      for (let i = 1; i <= n; i++) {
+        sum += i;
+      }
+      return sum;
+    }
+
+    function sum_to_n_b(n) {
+      return n * (n + 1) / 2;
+    }
+
+    function sum_to_n_c(n) {
+      if (n === 1) return 1;
+      return n + sum_to_n_c(n - 1);
+    }
+
+    function showResults() {
+      const n = parseInt(document.getElementById("numberInput").value);
+      if (isNaN(n) || n < 1) {
+        alert("Please enter a positive integer!");
+        return;
+      }
+
+      const resultA = sum_to_n_a(n);
+      const resultB = sum_to_n_b(n);
+      const resultC = sum_to_n_c(n);
+
+      document.getElementById("output").innerHTML = `
+        <pre>
+            ✅ sum_to_n_a(${n}) = ${resultA}
+            ✅ sum_to_n_b(${n}) = ${resultB}
+            ✅ sum_to_n_c(${n}) = ${resultC}
+        </pre>
+        `;
+    }
+  </script>
+</body>
+</html>
