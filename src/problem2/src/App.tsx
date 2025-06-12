@@ -47,7 +47,7 @@ export default function App() {
       setLoading(false);
       setOutputAmount(Number(converted.toFixed(6)));
       setSuccess(true);
-    }, 5000);
+    }, 800);
   };
 
   return (
