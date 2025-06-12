@@ -12,7 +12,7 @@ const customStyles = {
   control: (provided: any) => ({
     ...provided,
     padding: "4px",
-    fontSize: "15px"
+    fontSize: "15px",
   }),
   option: (provided: any) => ({
     ...provided,
